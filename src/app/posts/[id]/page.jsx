@@ -6,11 +6,12 @@ const getDetailsPosts = async (id) => {
 };
 const page = async ({ params }) => {
   console.log(params.id);
-  const postsDetailsData = await getDetailsPosts(params.id);
-  console.log(postsDetailsData)
+  const { title, body } = await getDetailsPosts(params.id);
+  //   console.log(postsDetailsData)
   return (
     <div>
-      <h2>posted details of id=${params.id}</h2>
+      <h6>Title:{title}</h6>
+      <h6>description:{body}</h6>
     </div>
   );
 };
